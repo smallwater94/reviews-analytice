@@ -20,8 +20,15 @@ for d in data:
 		new.append(d)
 print('共有', len(new)/10000,'% 的留言長度小於100')
 
-good = []
-for d in data:
-	if 'good' in d:
-		good.append(d)
+#good = []
+#for d in data:
+	#if 'good' in d:
+		#good.append(d)
+#print('含有',len(good),'筆留言含有good')
+
+	#上下相等,下為速寫法
+
+good = [d for d in data if 'good' in d]
 print('含有',len(good),'筆留言含有good')
+
+bad =['bad' in d for d in data]
