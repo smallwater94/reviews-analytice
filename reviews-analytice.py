@@ -1,5 +1,5 @@
 data = []
-pg = 10
+pg = 10 #進度
 with open('reviews.txt', 'r') as f:
 	for line in f:
 		data.append(line)
@@ -8,10 +8,8 @@ with open('reviews.txt', 'r') as f:
 			pg += 10
 print('檔案取完畢 共',len(data),'筆資料')
 
-allnum = 0
-con = 0
-while con < 1000000:
-	allnum += len(data[con])
-	con += 1
-avg = allnum / 1000000
-print(avg)
+sum_len = 0
+for d in data:
+	sum_len += len(d)
+
+print('平均是',sum_len/len(data),'筆留言')
